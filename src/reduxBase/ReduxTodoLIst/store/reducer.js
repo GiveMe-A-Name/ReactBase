@@ -18,6 +18,7 @@ export default function reducer(state = defaultState, action) {
     }
     // 通过传递过来的action.type
     // 对newState这个复制品进行处理
+    // 下面进行拆分
     switch (action.type) {
         case CHANGE_INPUT_VALUE:
             newState.inputValue = action.value
@@ -33,7 +34,6 @@ export default function reducer(state = defaultState, action) {
             newState.list = action.data
             break
         default:
-
     }
     // 最后返回这个newState
     return newState

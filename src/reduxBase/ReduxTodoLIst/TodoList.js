@@ -4,10 +4,9 @@ import {
     getChangeInputAction,
     getAddTodoAction,
     getDeleteTodoAction,
-    initAjaxAction
+    getTodoList
 } from './store/actionCreators'
 import TodoListUI from './TodoListUI'
-import axios from 'axios'
 class TodoList extends React.Component {
     constructor(props) {
         super(props)
@@ -46,15 +45,8 @@ class TodoList extends React.Component {
 
     // componentDidMount 挂载后生命周期函数
     componentDidMount() {
-        // 进行ajax请求（屏蔽url，所以手动模拟来代替）
-        /* 
-            const url = ''
-            axios.get(url).then(
-                reaponse => {
-                    store.dispatch(initAjaxAction(reaponse.data))
-            }
-        ) */
-        store.dispatch(initAjaxAction(['hello1', 'hello2', 'hello3']))
+        // 进行ajax请求
+        store.dispatch(getTodoList())
     }
 
     render() {
