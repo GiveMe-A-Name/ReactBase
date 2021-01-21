@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 // useContext 接受一个AppContext对象，解析出它当前包含的值
+// React.createContext('default Value')
 const MyContext = React.createContext({})
 const Navbar = () => {
     // useContext()钩子函数用来引入 Context 对象，从中获取username属性。 
@@ -13,6 +14,8 @@ const Navbar = () => {
 }
 
 const Messages = () => {
+    // 会返回一个context对象
+    // 这里使用对象解构，把username解构出来
     const { username } = useContext(MyContext)
     return (
         <div>

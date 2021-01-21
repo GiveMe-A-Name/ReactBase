@@ -16,6 +16,9 @@ const myReducer = (state, action) => {
 }
 
 const Counter = () => {
+    // useReducer接收reducer函数和initState
+    // 返回当前state 和 一个dispatch函数。
+    // dispatch用来提交action
     const [state, dispatch] = useReducer(myReducer, { count: 0 })
 
     return (

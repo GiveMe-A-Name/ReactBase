@@ -4,7 +4,7 @@ import reducer from "./reducer.js";
 // store仓库管理者
 const store = createStore(
     reducer,
-    applyMiddleware(thunk)
+    applyMiddleware([thunk])
 )
 
 export default store
