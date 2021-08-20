@@ -39,8 +39,21 @@ jobs:
       - name: git checkout test
         run: git checkout -b test/123
       - name: update file
-        run: git rev-parse --abbrev-ref HEAD
-      - name: Run a one-line script
         run: |
-          echo "Hello ${{ github.event.inputs.name }}!"
-          echo "- in ${{ github.event.inputs.home }}!"
+          echo "hello world" > hello.txt
+      - name: git commit
+        run: |
+          git add .
+          git commit -m "hello world"
+          git push --set-upstream origin test/123
+      - name: create pulls request
+        run: |
+          curl \
+          -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/GiveMe-A-Name/ReactBase/pulls \
+          -d '{"head":"test/123","base":"master"}'
+      # - name: Run a one-line script
+      #   run: |
+      #     echo "Hello ${{ github.event.inputs.name }}!"
+      #     echo "- in ${{ github.event.inputs.home }}!"
