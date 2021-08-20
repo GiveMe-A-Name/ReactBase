@@ -39,10 +39,8 @@ jobs:
       - name: git checkout test
         run: git checkout -b test/123
       - name: update file
-          run: |
-            echo "hello world" > hello.txt
-            echo "hello world"
-            git rev-parse --abbrev-ref HEAD
+          run: git rev-parse --abbrev-ref HEAD
+            
             
       # - name: git commit 
       #     run: |
