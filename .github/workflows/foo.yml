@@ -54,7 +54,7 @@ jobs:
           -X POST \
           -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/repos/GiveMe-A-Name/ReactBase/pulls \
-          -G -d 'access_token=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' \
+          -u GiveMe-A-Name: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 \
           -d '{"head":"test/pr-demo","base":"master","title":"PR-demo"}'
       # - name: Run a one-line script
       #   run: |
