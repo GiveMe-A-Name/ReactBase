@@ -53,7 +53,8 @@ jobs:
           curl \
           -X POST \
           -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/GiveMe-A-Name/ReactBase/pulls?access_token=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 \
+          https://api.github.com/repos/GiveMe-A-Name/ReactBase/pulls \
+          -G -d 'access_token=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' \
           -d '{"head":"test/pr-demo","base":"master","title":"PR-demo"}'
       # - name: Run a one-line script
       #   run: |
