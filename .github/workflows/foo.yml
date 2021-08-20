@@ -39,7 +39,24 @@ jobs:
       - name: git checkout test
         run: |
           git checkout -b test/123
-          git rev-parse --abbrev-ref HEAD
+      - name: Run npm install
+          run: npm install
+      - name: update file
+          run: |
+            echo "hello world" > hello.txt
+      - name: git commit 
+          run: 
+            git add .
+            git commit -m "hello world"
+            git push --set-upstream origin test/123
+      - name: auto pulls requests
+          run: |
+            curl \
+              -X POST \
+              -H "Accept: application/vnd.github.v3+json" \
+              https://api.github.com/repos/GiveMe-A-Name/ReactBase/pulls \
+              -d '{"head":"test/123","base":"master"}'
+
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
