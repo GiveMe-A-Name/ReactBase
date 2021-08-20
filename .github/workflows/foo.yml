@@ -38,8 +38,8 @@ jobs:
           node-version: "14"
       - name: git checkout test
         run: git checkout -b test/123
-      - name: Run npm install
-          run: npm install
+      # - name: Run npm install
+      #     run: npm install
       - name: update file
           run: |
             echo "hello world" > hello.txt
