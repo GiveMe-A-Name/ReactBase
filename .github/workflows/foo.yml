@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: "14"
       - name: git checkout test
-        run: git checkout -b test/123
+        run: git checkout -b test/pr-demo
       - name: update file
         run: |
           echo "hello world" > hello.txt
@@ -47,14 +47,14 @@ jobs:
           git config --global user.name "GiveMe-A-Name"
           git add .
           git commit -m "hello world"
-          git push --set-upstream origin test/123
+          git push --set-upstream origin test/pr-demo
       - name: create pulls request
         run: |
           curl \
           -X POST \
           -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/GiveMe-A-Name/ReactBase/pulls \
-          -d '{"head":"test/123","base":"master"}'
+          https://api.github.com/repos/GiveMe-A-Name/ReactBase/pulls?access_token=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 \
+          -d '{"head":"test/pr-demo","base":"master","title":"PR-demo"}'
       # - name: Run a one-line script
       #   run: |
       #     echo "Hello ${{ github.event.inputs.name }}!"
