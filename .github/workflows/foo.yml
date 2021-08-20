@@ -43,6 +43,8 @@ jobs:
           echo "hello world" > hello.txt
       - name: git commit
         run: |
+          git config --global user.email "a455300764b@hotmail.com"
+          git config --global user.name "GiveMe-A-Name"
           git add .
           git commit -m "hello world"
           git push --set-upstream origin test/123
