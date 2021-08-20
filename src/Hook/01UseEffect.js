@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+// add some comments
 function Welcome(props) {
     useEffect(() => {
         document.title = `hello ${props.name}`
