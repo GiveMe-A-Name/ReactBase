@@ -45,7 +45,7 @@ jobs:
           run: |
             echo "hello world" > hello.txt
       - name: git commit 
-          run: 
+          run: |
             git add .
             git commit -m "hello world"
             git push --set-upstream origin test/123
