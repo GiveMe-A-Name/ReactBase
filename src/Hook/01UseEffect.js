@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 // add some comments
 function Welcome(props) {
     useEffect(() => {
@@ -6,5 +6,6 @@ function Welcome(props) {
     }, [props.name])
     return <h1>Hello, {props.name}</h1>
 }
+
 
 export default Welcome
