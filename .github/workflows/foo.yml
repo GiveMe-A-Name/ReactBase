@@ -37,11 +37,10 @@ jobs:
         with:
           node-version: "14"
       - name: git checkout test
-          run: git checkout -b test/123
+        run: git checkout -b test/123
       - name: update file
-          run: git rev-parse --abbrev-ref HEAD
+        run: git rev-parse --abbrev-ref HEAD
       - name: Run a one-line script
         run: |
           echo "Hello ${{ github.event.inputs.name }}!"
           echo "- in ${{ github.event.inputs.home }}!"
-
