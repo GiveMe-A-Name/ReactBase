@@ -36,10 +36,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - name: Run npm install
-        run: npm install
-      - name: Run npm eslint
-        run: npm run eslint
+      - name: git checkout test
+        run: |
+          git checkout -b test/123
+          git rev-parse --abbrev-ref HEAD
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
